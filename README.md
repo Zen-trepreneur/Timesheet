@@ -25,7 +25,7 @@ A Django-based time-tracking application that enables users to log task-specific
    - **Data Visualization**: Charts illustrate time allocation across different projects for clearer insights into time distribution.
 
 ### 4. **Data Storage and Export**
-   - **Database**: All entries are securely stored in a database (SQLite or PostgreSQL).
+   - **Database**: All entries are securely stored in SQLite database.  
    - **Data Export**: Users can export their time entries as a CSV file, facilitating easy data transfer for payroll or analysis.
 
 
