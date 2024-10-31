@@ -236,9 +236,9 @@ In today’s remote and hybrid work models, time-tracking is essential for produ
 ### Code Structure: Emphasis on modularity and reusability.
 ### Design Standards: Use of effective design principles, focusing on ease of use and functionality.
 ### Optional Points:
-- ####Clean UI for a user-friendly experience.
-- ####Comprehensive Documentation (this README).
-- ####Hosting readiness for deployment.
+- Clean UI for a user-friendly experience.
+- Comprehensive Documentation (this README).
+- Hosting readiness for deployment.
 
 
 
