@@ -8,7 +8,7 @@ A Django-based time-tracking application that enables users to log task-specific
 ## 1. State of the Art in HR Analytics
 
 ### Relevance of Time-Tracking in HR Analytics
-In the HR Analytics industry, time-tracking plays a crucial role in understanding productivity, optimizing project timelines, and managing workforce costs. Over the last decade, HR analytics has evolved beyond traditional record-keeping to integrate strategic insights and workforce management capabilities. Time-entry systems provide data essential for making informed decisions on project and workforce efficiency. 
+In the HR Analytics industry, time-tracking plays a crucial role in understanding productivity, optimizing project timelines, and managing workforce costs. Over the last decade, HR analytics has evolved beyond traditional record-keeping to integrate strategic insights and workforce management capabilities. Time-tracking systems provide data essential for making informed decisions on project and workforce efficiency. 
 
 ### Past Trends (2013-2023)
 The evolution of time-tracking software can be traced as follows:
@@ -24,7 +24,7 @@ By 2025, HR analytics is expected to incorporate more AI-powered predictive anal
 ## 2. Project Overview
 
 ### Project Description
-The Time-Entry Application is a Django-based solution allowing users to log and manage time entries for tasks associated with projects. This application facilitates productivity insights and helps managers track hours on a project basis, ultimately improving resource management and accountability.
+The Time-tracking Application is a Django-based solution allowing users to log and manage time entries for tasks associated with projects. This application facilitates productivity insights and helps managers track hours on a project basis, ultimately improving resource management and accountability.
 
 ### Stakeholders
 - **End-Users**: Employees logging task hours.
@@ -103,13 +103,13 @@ In today’s remote and hybrid work models, time-tracking is essential for produ
                  +--------------------------------+-------------+----------------+-----------------------+
                  |                                |                                  |                     |
      +-----------v----------+       +-------------v-------------+       +------------v-----------+       +--v-------------------+
-     |  Time-sheet Entry    |       |  Management Console       |       |   Reporting Dashboard  |       | Logout (End Session) |
+     |  Time-sheet tracking    |       |  Management Console       |       |   Reporting Dashboard  |       | Logout (End Session) |
      |  (Add Time Logs)     |       |  (Admin & Manager Access) |       |  (Admin View Reports)  |       |                       |
      +-----------+----------+       +-------------+-------------+       +------------+-----------+       +----------------------+
                  |                                |                                  |
 +----------------v----------------+       +-------v-------+                 +--------v--------+
 | Fill Time Log Form              |       | Employee Info |                 | Generate Reports |
-| (Entry with clock-in/clock-out) |       | Management    |                 | (Attendance,     |
+| (tracking with clock-in/clock-out) |       | Management    |                 | (Attendance,     |
 +----------------+----------------+       +---------------+                 | Timesheet Data)  |
                  |                                                        +--+-----------------+
 +----------------v----------------+                                      | Admin Reporting   |
@@ -134,17 +134,17 @@ In today’s remote and hybrid work models, time-tracking is essential for produ
    - Allow users to register with essential information (name, username, email).
    - Implement authentication to ensure secure access.
 
-2. **Create Time Entry**
+2. **Create Time tracking**
    - **Task Logging**:
       - Input field for task name.
       - Dropdown for project selection.
    - **Timing Options**:
       - Manual start and end time input.
       - Timer feature for automated time tracking.
-   - **Save Entry**:
-      - Save the entry to the database upon completion.
+   - **Save tracking**:
+      - Save the tracking to the database upon completion.
 
-3. **Time Entry Browsing**
+3. **Time tracking Browsing**
    - **Date-Based Filtering**: Interface to filter entries by date.
    - **Project-Based Filtering**: Filter entries based on project name.
 
@@ -157,7 +157,7 @@ In today’s remote and hybrid work models, time-tracking is essential for produ
 
 6. **Error Handling and Validation**
    - Validation checks for date and time inputs to ensure accuracy.
-   - Exception handling to manage user errors during data entry and export.
+   - Exception handling to manage user errors during data tracking and export.
 
 ---
 
@@ -168,8 +168,8 @@ In today’s remote and hybrid work models, time-tracking is essential for produ
    - **Registration**: Users can register with essential details like name, username, and email.
    - **Login/Logout**: Secure authentication to protect user data and restrict access.
 
-### 2. **Time Entry Management**
-   - **Add Time Entry**:
+### 2. **Time tracking Management**
+   - **Add Time tracking**:
      - **Task Name Input**: Users can specify the name of the task they are working on.
      - **Project Selection**: A dropdown menu allows users to select the relevant project.
      - **Start and End Time**: Users can manually input start and end times.
@@ -201,7 +201,7 @@ In today’s remote and hybrid work models, time-tracking is essential for produ
    - **Methodology**: Agile development to iteratively build and refine features.
 
 ### 2. UI/UX Design
-   - Develop user interaction components such as buttons, navigation, and entry forms.
+   - Develop user interaction components such as buttons, navigation, and tracking forms.
    - Design an intuitive interface for easy navigation.
 
 ### 3. Designing and Prototyping
@@ -210,14 +210,14 @@ In today’s remote and hybrid work models, time-tracking is essential for produ
 
 ### 4. Coding and Programming
    - **Implementation**:
-      - Backend development in Django for user registration, time entry, and data storage.
+      - Backend development in Django for user registration, time tracking, and data storage.
       - Front-end views for intuitive user interaction.
    - **Monitoring and Control**:
       - Regular code reviews for alignment with project goals and quality standards.
 
 ### 5. Testing
    - Quality assurance tests on user flows and functionalities.
-   - Validate time entry accuracy, user authentication, and data export for reliability.
+   - Validate time tracking accuracy, user authentication, and data export for reliability.
 
 ### 6. Deployment
    - Deploy the application to production.
