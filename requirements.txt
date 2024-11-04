@@ -1,6 +1,6 @@
 # Core dependencies
-Django==4.3             # Django web framework
-djangorestframework==3.14.0     # Django REST framework for API creation
+Django            # Django web framework
+djangorestframework    # Django REST framework for API creation
 
 # Security and Authentication
 django-allauth==0.54.0          # User authentication and registration
