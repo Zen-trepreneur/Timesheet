@@ -1,8 +1,6 @@
 # Core dependencies
-Django==4.1.7                   # Django web framework
+Django==4.3             # Django web framework
 djangorestframework==3.14.0     # Django REST framework for API creation
-psycopg2-binary==2.9.6          # PostgreSQL adapter for Django
-django-crispy-forms==1.14.0     # For easier form styling
 
 # Security and Authentication
 django-allauth==0.54.0          # User authentication and registration
@@ -12,16 +10,8 @@ django-axes==5.38.0             # Brute force protection
 django-bootstrap4==22.3         # Bootstrap 4 integration for Django
 django-widget-tweaks==1.4.12    # Customize form widgets in templates
 
-# Analytics and Visualization
-matplotlib==3.7.1               # Data visualization for time-entry analysis
-pandas==2.1.1                   # Data manipulation and analysis
-
 # Optional: Debugging and Development Tools
 django-debug-toolbar==3.10.0    # Debugging tool for Django projects
 
 # Deployment
 gunicorn==20.1.0                # WSGI HTTP Server for deployment
-whitenoise==6.5.0               # Serve static files in production
-
-# Miscellaneous
-pytz==2023.3                    # Timezone support
