@@ -3,15 +3,15 @@ Django            # Django web framework
 djangorestframework    # Django REST framework for API creation
 
 # Security and Authentication
-django-allauth==0.54.0          # User authentication and registration
-django-axes==5.38.0             # Brute force protection
+django-allauth       # User authentication and registration
+django-axes            # Brute force protection
 
 # Frontend and Styling
-django-bootstrap4==22.3         # Bootstrap 4 integration for Django
-django-widget-tweaks==1.4.12    # Customize form widgets in templates
+django-bootstrap4        # Bootstrap 4 integration for Django
+django-widget-tweaks    # Customize form widgets in templates
 
 # Optional: Debugging and Development Tools
-django-debug-toolbar==3.10.0    # Debugging tool for Django projects
+django-debug-toolbar # Debugging tool for Django projects
 
 # Deployment
-gunicorn==20.1.0                # WSGI HTTP Server for deployment
+gunicorn           # WSGI HTTP Server for deployment
