@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Time-Entry - Create (user)</title>
+    <link rel="stylesheet" href="../4/cyborg/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="../_assets/css/custom.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cyborg/bootstrap.min.css" integrity="sha384-nEnU7Ae+3lD52AK+RGNzgieBWMnEfgTbRHIwEvp1XXPdqdO6uLTd/NwXbzboqjc2" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <div class="bs-docs-section">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h1 id="forms">Time-Entry : Create New Entry page (USER specific)</h1><br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bs-component">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <a class="navbar-brand" href="#"><strong>| {{ request.user.get_full_name }} |</strong></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarColor01">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'home' %}"><strong>Home</strong><span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'time_entry' %}"><strong>View Old Time-Entries</strong></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <h6><a class="nav-link" style="color:white" href="{% url 'logout' %}"><strong>Log Out</strong></a></h6>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+
+            <br>
+
+            <form method="post">
+
+                {% csrf_token %}
+
+                {% for field in form %}
+
+                    <div class="form-group has-success has-danger">
+
+                        <label>{{ field.label }}</label>
+
+                        {% if form.is_bound %}
+
+                            {% if field.errors %}
+
+                                {% if field.name == "dev" %}
+                                    <select name="{{ field.name }}" class="form-control is-invalid">
+                                        <option hidden disabled selected value> -- select an option -- </option>
+                                        {% for choice in field.field.choices %}
+                                            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                                        {% endfor %}
+                                    </select>
+
+                                {% elif field.name == "task" %}
+                                    <input type="text" value="{{ field.value }}" name="{{ field.name }}" class="form-control is-invalid" placeholder="Enter your Task description">
+
+                                {% elif field.name == "project" %}
+                                    <select name="{{ field.name }}" class="form-control is-invalid">
+                                        <option hidden disabled selected value> -- select an option -- </option>
+                                        {% for choice in field.field.choices %}
+                                            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                                        {% endfor %}
+                                    </select>
+
+                                {% elif "datetime" in field.name %}
+                                    <input type="datetime-local" value="{{ field.value }}" name="{{ field.name }}" class="form-control is-invalid">
+                                {% endif %}
+
+                                {% for error in field.errors %}
+                                    <div class="invalid-feedback">{{ error }}</div>
+                                {% endfor %}
+
+                            {% else %}
+
+                                {% if field.name == "dev" %}
+                                    <select name="{{ field.name }}" class="form-control is-valid">
+                                        <option hidden disabled selected value> -- select an option -- </option>
+                                        {% for choice in field.field.choices %}
+                                            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                                        {% endfor %}
+                                    </select>
+
+                                {% elif field.name == "task" %}
+                                    <input type="text" value="{{ field.value }}" name="{{ field.name }}" class="form-control is-valid" placeholder="Enter your Task description">
+
+                                {% elif field.name == "project" %}
+                                    <select name="{{ field.name }}" class="form-control is-valid">
+                                        <option hidden disabled selected value> -- select an option -- </option>
+                                        {% for choice in field.field.choices %}
+                                            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                                        {% endfor %}
+                                    </select>
+
+                                {% elif "datetime" in field.name %}
+                                    <input type="datetime-local" value="{{ field.value }}" name="{{ field.name }}" class="form-control is-valid">
+                                {% endif %}
+
+                            {% endif %}
+
+                        {% else %}
+
+                            {% if field.name == "dev" %}
+                                <select name="{{ field.name }}" class="form-control">
+                                    <option hidden disabled selected value> -- select an option -- </option>
+                                    {% for choice in field.field.choices %}
+                                        <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                                    {% endfor %}
+                                </select>
+
+                            {% elif field.name == "task" %}
+                                <input type="text" value="{{ field.value }}" name="{{ field.name }}" class="form-control" placeholder="Enter your Task description">
+
+                            {% elif field.name == "project" %}
+                                <select name="{{ field.name }}" class="form-control">
+                                    <option hidden disabled selected value> -- select an option -- </option>
+                                    {% for choice in field.field.choices %}
+                                        <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                                    {% endfor %}
+                                </select>
+
+                            {% elif "datetime" in field.name %}
+                                <input type="datetime-local" value="{{ field.value }}" name="{{ field.name }}" class="form-control">
+                            {% endif %}
+
+                        {% endif %}
+
+                    </div>
+
+                {% endfor %}
+
+
+                <br><br>
+                <button type="submit" class="btn btn-primary" style="margin:auto; display:block">Submit</button>
+                <br><br>
+
+            </form>
+			
+        </div>
+    </div>
+
+</body>
+</html>
